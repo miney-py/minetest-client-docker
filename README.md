@@ -17,7 +17,8 @@ Start a client that connects to minetestserver.com and does random input on this
 
 `docker-compose.exe up -d --scale minetest_client=10`
 
-This starts a minetest [server](https://github.com/miney-py/miney-docker) with [mineysocket](https://github.com/miney-py/mineysocket) mod.
+This starts a minetest [server](https://github.com/miney-py/miney-docker) with 
+[mineysocket](https://github.com/miney-py/mineysocket) mod and 10 random input clients.
 
 Don't join them all at once, scale slowly up, cause joining clients uses cpu. 
 After some seconds it gets getting much better, and you can join another bunch of clients.
