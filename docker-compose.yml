@@ -16,6 +16,8 @@ services:
 
   minetest_client:
     image: miney/minetest-client
+    depends_on:
+      - "minetest_server"
     environment:
       SERVER: minetest_server
       PORT: 30000

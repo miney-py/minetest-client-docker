@@ -54,6 +54,5 @@ ENV \
     VNC="0"
 
 EXPOSE 5900/tcp
-STOPSIGNAL SIGKILL
 
 CMD ["/usr/local/bin/entrypoint.sh"]
