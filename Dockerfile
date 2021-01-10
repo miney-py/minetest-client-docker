@@ -31,13 +31,14 @@ FROM utensils/opengl:stable AS server
 
 COPY --from=compile /usr/local/share/minetest /usr/local/share/minetest
 COPY --from=compile /usr/local/bin/minetest /usr/local/bin/minetest
+COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN apk add --no-cache sqlite-libs curl gmp libstdc++ libgcc luajit irrlicht x11vnc bash xdotool && \
 	adduser -D minetest --uid 30000 -h /var/lib/minetest && \
 	mkdir /var/lib/minetest/.minetest && \
-	chown -R minetest:minetest /var/lib/minetest
+	chown -R minetest:minetest /var/lib/minetest && \
+	chmod 755 /usr/local/bin/entrypoint.sh
 
-COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 
 WORKDIR /var/lib/minetest
 
