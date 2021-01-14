@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   minetest_server:
-    image: miney/miney-server
+    image: miney/mineysocket
     ports:
       - "29999:29999/tcp"
       - "30000:30000/udp"
